@@ -129,6 +129,9 @@ echo call environment.bat
 echo echo ------------------------------ [92mRMADART CHECKPOINT[0m -----------------------------
 echo curl -Lo comfyui\models\checkpoints\rmadart_v110.safetensors https://civitai.com/api/download/models/248717
 echo echo.
+echo echo ------------------------------- [92mNMKD SUPERSCALE[0m -------------------------------
+echo curl --output-dir comfyui\models\upscale_models -LO https://huggingface.co/uwg/upscaler/resolve/main/ESRGAN/8x_NMKD-Superscale_150000_G.pth
+echo echo.
 echo echo -------------------------------------------------------------------------------
 echo echo  Done
 echo echo -------------------------------------------------------------------------------
