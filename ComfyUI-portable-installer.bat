@@ -7,6 +7,8 @@ set GITURL=https://github.com/git-for-windows/git/releases/download/v%GITVER%.wi
 set PYTHONURL=https://www.python.org/ftp/python/%PYTHONVER%/python-%PYTHONVER%-embed-amd64.zip
 set COMFYUIURL=https://github.com/comfyanonymous/ComfyUI
 set COMFYMANURL=https://github.com/ltdrdata/ComfyUI-Manager
+set CONTROLNET=comfyui_controlnet_aux
+set CONTROLNETURL=https://github.com/Fannovel16/%CONTROLNET%
 set GETPIPURL=https://bootstrap.pypa.io/get-pip.py
 set ZIPRURL=https://www.7-zip.org/a/7zr.exe
 set ZIPURL=https://www.7-zip.org/a/7z2301-extra.7z
@@ -120,6 +122,23 @@ echo echo ----------------------------------------------------------------------
 echo pause
 echo del %%~nx0
 )>install_manager.bat
+
+(
+echo @echo off
+echo set SD=%%~dp0
+echo cd /D %%SD%%
+echo call environment.bat
+echo echo ---------------------------------- [92mCONTROLNET[0m ---------------------------------
+echo git -C comfyui\custom_nodes clone %CONTROLNETURL%
+echo python -m pip install -r comfyui/custom_nodes/%CONTROLNET%/requirements.txt
+echo python -m pip cache purge
+echo echo.
+echo echo -------------------------------------------------------------------------------
+echo echo  Done
+echo echo -------------------------------------------------------------------------------
+echo pause
+echo del %%~nx0
+)>install_controlnet.bat
 
 (
 echo @echo off
