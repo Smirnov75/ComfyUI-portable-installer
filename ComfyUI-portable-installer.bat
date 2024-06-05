@@ -1,5 +1,5 @@
 @echo off
-set COPYRIGHT=-                   ComfyUI (portable) - Max Smirnov 2024.02                  -
+set COPYRIGHT=-                   ComfyUI (portable) - Max Smirnov 2024.06                  -
 rem https://github.com/Smirnov75/ComfyUI-portable-installer
 set PYTHONVER=3.10.6
 set GITVER=2.39.1
@@ -97,7 +97,7 @@ echo set SD=%%~dp0
 echo cd /D %%SD%%
 echo call environment.bat
 echo python system/python/get-pip.py
-echo python -m pip install torch torchvision xformers --extra-index-url https://download.pytorch.org/whl/cu121
+echo python -m pip install torch==2.3.0 torchvision==0.18.0 xformers==0.0.26.post1 --extra-index-url https://download.pytorch.org/whl/cu121
 echo python -m pip install -r comfyui/requirements.txt
 echo python -m pip cache purge
 echo echo.
