@@ -80,15 +80,16 @@ echo python main.py --preview-method latent2rgb
 (
 echo @echo off
 echo set SD=%%~dp0
-echo set PATH=C:\Windows\system32;C:\Windows;%%SD%%\system\git\libexec\git-core;%%SD%%\system\python;%%SD%%\system\python\Scripts;%%PATH%%
-echo set PY_LIBS=%%SD%%\system\python\Scripts\Lib;%%SD%%\system\python\Scripts\Lib\site-packages
-echo set PY_PIP=%%SD%%\system\python\Scripts
-echo set MYPY_CACHE_DIR=%%SD%%\system\cache\tmp\
-echo set PIP_CACHE_DIR=%%SD%%\system\cache\pip\
-echo set TEMP=%%SD%%\system\cache\
+echo set PATH=C:\Windows\system32;C:\Windows;%%SD%%system\git\libexec\git-core;%%SD%%system\python;%%SD%%system\python\Scripts;%%PATH%%
+echo set PY_LIBS=%%SD%%system\python\Scripts\Lib;%%SD%%system\python\Scripts\Lib\site-packages
+echo set PY_PIP=%%SD%%system\python\Scripts
+echo set MYPY_CACHE_DIR=%%SD%%system\cache\tmp\
+echo set PIP_CACHE_DIR=%%SD%%system\cache\pip\
+echo set TEMP=%%SD%%system\cache\
 echo set SKIP_VENV=1
-echo set PIP_INSTALLER_LOCATION=%%SD%%\system\python\get-pip.py
-echo set TRANSFORMERS_CACHE=%%SD%%\system\transformers-cache
+echo set PIP_INSTALLER_LOCATION=%%SD%%system\python\get-pip.py
+echo set HF_HOME=%%SD%%system\transformers-cache
+echo if [%%1]==[] cmd /k
 )>environment.bat
 
 (
