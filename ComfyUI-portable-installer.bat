@@ -98,7 +98,7 @@ echo set SD=%%~dp0
 echo cd /D %%SD%%
 echo call environment.bat load
 echo python system/python/get-pip.py
-echo python -m pip install torch==2.3.0 torchvision==0.18.0 xformers==0.0.26.post1 --extra-index-url https://download.pytorch.org/whl/cu121
+echo python -m pip install numpy==1.26.4 torch==2.3.0 torchvision==0.18.0 xformers==0.0.26.post1 --extra-index-url https://download.pytorch.org/whl/cu121
 echo python -m pip install -r comfyui/requirements.txt
 echo python -m pip cache purge
 echo echo.
