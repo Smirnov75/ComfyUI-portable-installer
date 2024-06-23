@@ -72,7 +72,7 @@ del 7z*.exe >nul
 echo @echo off
 echo set SD=%%~dp0
 echo cd /D %%SD%%
-echo call environment.bat
+echo call environment.bat load
 echo cd comfyui
 echo python main.py --preview-method latent2rgb
 )>comfyui.bat
@@ -96,7 +96,7 @@ echo if [%%1]==[] cmd /k
 echo @echo off
 echo set SD=%%~dp0
 echo cd /D %%SD%%
-echo call environment.bat
+echo call environment.bat load
 echo python system/python/get-pip.py
 echo python -m pip install torch==2.3.0 torchvision==0.18.0 xformers==0.0.26.post1 --extra-index-url https://download.pytorch.org/whl/cu121
 echo python -m pip install -r comfyui/requirements.txt
@@ -113,7 +113,7 @@ echo del %%~nx0
 echo @echo off
 echo set SD=%%~dp0
 echo cd /D %%SD%%
-echo call environment.bat
+echo call environment.bat load
 echo echo ------------------------------- [92mCOMFYUI MANAGER[0m -------------------------------
 echo git -C comfyui\custom_nodes clone %COMFYMANURL%
 echo echo.
@@ -128,7 +128,7 @@ echo del %%~nx0
 echo @echo off
 echo set SD=%%~dp0
 echo cd /D %%SD%%
-echo call environment.bat
+echo call environment.bat load
 echo echo ---------------------------------- [92mCONTROLNET[0m ---------------------------------
 echo git -C comfyui\custom_nodes clone %CONTROLNETURL%
 echo python -m pip install -r comfyui/custom_nodes/%CONTROLNET%/requirements.txt
@@ -145,7 +145,7 @@ echo del %%~nx0
 echo @echo off
 echo set SD=%%~dp0
 echo cd /D %%SD%%
-echo call environment.bat
+echo call environment.bat load
 echo echo ------------------------------ [92mRMADART CHECKPOINT[0m -----------------------------
 echo curl -Lo comfyui\models\checkpoints\rmadart_v110.safetensors https://civitai.com/api/download/models/248717
 echo echo.
